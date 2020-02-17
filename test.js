@@ -9,7 +9,7 @@
 
 require('mocha');
 var assert = require('assert');
-var repositoryURL = require('./');
+var repositoryURL = require('./index.js');
 
 describe('repository URL', function() {
   it('should get a package.json for the given project', function(cb) {
