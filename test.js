@@ -7,9 +7,9 @@
 
 'use strict';
 
-require('mocha');
-var assert = require('assert');
-var repositoryURL = require('./index.js');
+import 'mocha'
+import assert from 'assert';
+import repositoryURL from './index.js';
 
 describe('repository URL', function() {
   it('should get a package.json for the given project', function(cb) {

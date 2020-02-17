@@ -2,7 +2,7 @@
 
 'use strict';
 
-var repo = require('../index.js');
+import repo from '../index.js'
 
 if(!process.argv[2]) {
   process.stdout.write('Missing argument: package' + "\n");

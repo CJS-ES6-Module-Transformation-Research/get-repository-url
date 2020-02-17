@@ -7,9 +7,9 @@
 
 'use strict';
 
-const util = require('util');
-const parse = require('parse-github-url');
-const pkg = require('get-pkg');
+import util from 'util';
+import parse from 'parse-github-url';
+import pkg from 'get-pkg';
 const isObject = val => val !== null && typeof val === 'object';
 const isString = val => val !== '' && typeof val === 'string';
 
