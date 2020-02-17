@@ -27,6 +27,7 @@
     "test": "mocha"
   },
   "dependencies": {
+    "esm": "^3.2.25",
     "get-pkg": "^1.0.0",
     "parse-github-url": "^1.0.2"
   },

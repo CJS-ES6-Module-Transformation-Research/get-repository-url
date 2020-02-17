@@ -1,0 +1,89 @@
+
+
+----- Transformation notes for get-repository-url. -----
+
+
+Types of patterns found: 
+
+>>-require strings-
+  -npm named
+	-> 'fs' 'os' 'mocha'
+  -relative path directory requires
+	-> './'  '../'  '../dir/'
+	(or something with more directories in the path)
+
+>>-requires/import-
+  -simple assignment require (var/const/let name = require('module');)
+	-> import name from 'module';
+  -side-effect require/import (require('module');)
+	-> import 'module';
+>>-exports/export-
+  -default exports assignment (module.exports = value;)
+	-> export default value;
+
+
+--------------- index.js ---------------
+
+<--- (10-12)
+const util = require('util');
+const parse = require('parse-github-url');
+const pkg = require('get-pkg');
+---
+import util from 'util';
+import parse from 'parse-github-url';
+import pkg from 'get-pkg';
+--->
+
+<--- (57)
+module.exports = getRepsitoryUrl;
+---
+export default getRepsitoryUrl;
+--->
+_______________________________________
+
+
+
+
+--------------- test.js ---------------
+
+<--- (10)
+require('mocha');
+var assert = require('assert');
+var repositoryURL = require('./');
+---
+import 'mocha'
+import assert from 'assert';
+import repositoryURL from './index.js';
+--->
+|--appended 'index.js' inside repositoryURL import
+_______________________________________
+
+
+
+--------------- example.js ---------------
+
+<--- (3)
+var repo = require('./');
+---
+import repo from './index.js'
+--->
+|--appended 'index.js' inside `var repo = ` import
+
+_______________________________________
+
+
+
+
+--------------- bin/cli.js ---------------
+
+<--- (5)
+var repo = require('../');
+---
+import repo from '../index.js'
+--->
+|--appended 'index.js' inside `var repo = ` import
+
+_______________________________________
+
+
+

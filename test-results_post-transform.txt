@@ -1,0 +1,12 @@
+
+
+  repository URL
+    ✓ should get a package.json for the given project (572ms)
+    ✓ should handle errors (858ms)
+    ✓ should handle empty strings
+    ✓ should handle scoped packages (142ms)
+    ✓ should handle promises (107ms)
+
+
+  5 passing (2s)
+
