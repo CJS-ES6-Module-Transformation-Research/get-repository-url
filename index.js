@@ -54,4 +54,4 @@ function repository(pkg) {
   return `https://github.com/${parsed.repository}`;
 }
 
-module.exports = getRepsitoryUrl;
+export default getRepsitoryUrl;
