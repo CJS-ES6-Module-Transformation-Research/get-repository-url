@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "name": "get-repository-url",
   "description": "Get the GitHub repository URL from a NPM package name.",
   "version": "2.0.0",
@@ -34,7 +33,7 @@
   },
   "devDependencies": {
     "gulp-format-md": "^1.0.0",
-    "mocha": "^7.1.0"
+    "mocha": "^5.2.0"
   },
   "keywords": [
     "get",
